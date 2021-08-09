@@ -60,11 +60,11 @@ pipeline {
 
                     echo "Building for $BUILD_TARGET"
 
-                    export BUILD_PATH=$UNITY_DIR/Builds/$BUILD_TARGET/
+                    export BUILD_PATH=$WORKSPACE/Builds/$BUILD_TARGET/
                     mkdir -p $BUILD_PATH
 
                     ${UNITY_EXECUTABLE:-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' unity-editor} \
-                    -projectPath $UNITY_DIR \
+                    -projectPath $WORKSPACE \
                     -quit \
                     -batchmode \
                     -nographics \
