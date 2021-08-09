@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'unityci/editor:2020.3.12f1-base-0.15' }
+        docker {
+            image 'unityci/editor:2020.3.12f1-base-0.15'
+            args '-u root --privileged'
+        }
     }
     environment {
         UNITY_LICENSE_FILE = credentials('UNITY_LICENSE_FILE')
