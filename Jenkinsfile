@@ -81,8 +81,7 @@ pipeline {
                     -buildTarget $BUILD_TARGET \
                     -customBuildTarget $BUILD_TARGET \
                     -customBuildName $BUILD_NAME \
-                    -customBuildPath $BUILD_PATH \
-                    -logFile /dev/stdout
+                    -customBuildPath $BUILD_PATH
 
                     UNITY_EXIT_CODE=$?
 
