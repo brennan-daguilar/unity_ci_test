@@ -92,5 +92,10 @@ pipeline {
                 '''
             }
         }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: '/Build/**', followSymlinks: false
+            }
+        }
     }
 }
