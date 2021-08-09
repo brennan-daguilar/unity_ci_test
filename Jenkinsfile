@@ -82,7 +82,6 @@ pipeline {
                     -customBuildTarget $BUILD_TARGET \
                     -customBuildName $BUILD_NAME \
                     -customBuildPath $BUILD_PATH \
-                    -executeMethod BuildCommand.PerformBuild \
                     -logFile /dev/stdout
 
                     UNITY_EXIT_CODE=$?
