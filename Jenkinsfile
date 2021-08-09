@@ -46,7 +46,7 @@ pipeline {
                     if [ -z "${!LICENSE}" ]
                     then
                         echo "$LICENSE env var not found, using default UNITY_LICENSE env var"
-                        LICENSE=UNITY_LICENSE
+                        LICENSE=UNITY_LICENSE_FILE
                     else
                         echo "Using $LICENSE env var"
                     fi
