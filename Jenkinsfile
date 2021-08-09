@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'unityci/editor:2020.3.12f1-windows-mono-0.15'
-            args '-u root --privileged'
+            args '-u root --privileged --hostname buildmachine'
         }
     }
     environment {
