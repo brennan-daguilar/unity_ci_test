@@ -53,9 +53,8 @@ pipeline {
                     fi
 
                     echo "Writing $LICENSE to license file /root/.local/share/unity3d/Unity/Unity_lic.ulf"
-                    echo $UNITY_LICENSE_FILE | tr -d '\r' > /root/.local/share/unity3d/Unity/Unity_lic.ulf
-                    echo $LICENSE
-                    echo $UNITY_LICENSE_FILE
+                    echo $UNITY_LICENSE_FILE > /root/.local/share/unity3d/Unity/Unity_lic.ulf
+
                     set -x
                     cat /root/.local/share/unity3d/Unity/Unity_lic.ulf
 
