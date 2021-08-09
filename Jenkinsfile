@@ -2,7 +2,13 @@ pipeline {
     agent {
         docker { image 'unityci/editor:2020.3.12f1-base-0.15' }
     }
-
+    environment {
+        UNITY_LICENSE_FILE = credentials('UNITY_LICENSE_FILE')
+        UNITY_VERSION = '2020.3.12f1'
+        IMAGE = 'unityci/editor'
+        IMAGE_VERSION = '0.15'
+        BUILD_TARGET = 'StandaloneWindows64'
+    }
     stages {
         stage('Hello') {
             steps {
