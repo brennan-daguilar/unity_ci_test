@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-        UNITY_LICENSE_FILE = credentials('UNITY_LICENSE_FILE')
+        UNITY_LICENSE_FILE = credentials('UnityLicenseFile.ulf')
         UNITY_VERSION = '2020.3.12f1'
         IMAGE = 'unityci/editor'
         IMAGE_VERSION = '0.15'
@@ -42,19 +42,7 @@ pipeline {
                         fi
                     fi
 
-                    LICENSE="UNITY_LICENSE_"$UPPERCASE_BUILD_TARGET
-
-                    if [ -z "${!LICENSE}" ]
-                    then
-                        echo "$LICENSE env var not found, using default UNITY_LICENSE env var"
-                        LICENSE=UNITY_LICENSE_FILE
-                    else
-                        echo "Using $LICENSE env var"
-                    fi
-
-                    echo "Writing $LICENSE to license file /root/.local/share/unity3d/Unity/Unity_lic.ulf"
-                    echo $UNITY_LICENSE_FILE > /root/.local/share/unity3d/Unity/Unity_lic.ulf
-
+                    cp $UNITY_LICENSE_FILE /root/.local/share/unity3d/Unity/Unity_lic.ulf
                     set -x
                     cat /root/.local/share/unity3d/Unity/Unity_lic.ulf
 
