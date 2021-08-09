@@ -20,8 +20,7 @@ pipeline {
         }
         stage('Configure Unity License') {
             steps {
-                sh '''
-                    #!/usr/bin/env bash
+                sh '''#!/bin/bash
 
                     set -e
                     set -x
