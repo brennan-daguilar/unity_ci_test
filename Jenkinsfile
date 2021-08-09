@@ -71,7 +71,8 @@ pipeline {
                     -buildTarget $BUILD_TARGET \
                     -customBuildTarget $BUILD_TARGET \
                     -customBuildName $BUILD_NAME \
-                    -customBuildPath $BUILD_PATH
+                    -customBuildPath $BUILD_PATH \
+                    -cacheServerEndpoint 192.168.1.180:10080
 
                     UNITY_EXIT_CODE=$?
 
