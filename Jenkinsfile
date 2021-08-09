@@ -94,7 +94,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '/Builds/**', followSymlinks: false
+                archiveArtifacts artifacts: 'Builds/**', followSymlinks: false
             }
         }
     }
