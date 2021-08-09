@@ -62,7 +62,7 @@ pipeline {
         stage('Build') {
             steps {
                 
-                sh '''#!/binbash
+                sh '''#!/bin/bash
 
                     set -e
                     set -x
