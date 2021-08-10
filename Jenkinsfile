@@ -18,16 +18,18 @@ pipeline {
             environment {
                 BUILD_TARGET = 'Android'
             }
-            stage('Configure Unity License') {
-                steps {
-                    sh('./ci/before_script.sh')  
+            stages {
+                stage('Configure Unity License') {
+                    steps {
+                        sh('./ci/before_script.sh')  
+                    }
                 }
-            }
-            stage('Build') {
-                steps {
-                    sh('./ci/build.sh')
-                }
-            }                
+                stage('Build') {
+                    steps {
+                        sh('./ci/build.sh')
+                    }
+                }       
+            }         
         }
 
         stage('Windows') {
@@ -40,15 +42,17 @@ pipeline {
             environment {
                 BUILD_TARGET = 'StandaloneWindows64'
             }
-            stage('Configure Unity License') {
-                steps {
-                    sh('./ci/before_script.sh')  
+            stages {
+                stage('Configure Unity License') {
+                    steps {
+                        sh('./ci/before_script.sh')  
+                    }
                 }
-            }
-            stage('Build') {
-                steps {
-                    sh('./ci/build.sh')
-                }
+                stage('Build') {
+                    steps {
+                        sh('./ci/build.sh')
+                    }
+                }       
             }                
         }
 
