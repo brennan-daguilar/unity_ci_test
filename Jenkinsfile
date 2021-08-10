@@ -7,7 +7,7 @@ pipeline {
         IMAGE_VERSION = '0.15'
         BUILD_NAME = "Testy"
     }
-    parallel {
+    stages {
         stage('Android') {
             agent {
                 docker {
