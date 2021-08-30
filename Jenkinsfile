@@ -23,13 +23,13 @@ pipeline {
                     steps {
                         sh('./ci/build.sh')
                     }
-                }       
+                }
+                stage('Archive') {
+                    steps {
+                        archiveArtifacts artifacts: 'Builds/**', followSymlinks: false
+                    }
+                }
             }         
-        }
-        stage('Archive') {
-            steps {
-                archiveArtifacts artifacts: 'Builds/**', followSymlinks: false
-            }
         }
     }
 }
