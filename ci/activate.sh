@@ -3,7 +3,7 @@
 echo "Requesting activation (professional license)"
 
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
-    /opt/Unity/Editor/Unity \
+    /opt/unity/Editor/Unity \
       -batchmode \
       -nographics \
       -logFile /dev/stdout \
