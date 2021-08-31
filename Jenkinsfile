@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    aagent {
+        label 'unity-agent-wip'
+    }
     
     environment {
         UNITY_LICENSE_FILE = credentials('UnityLicenseFile.ulf')
