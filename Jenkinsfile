@@ -1,10 +1,9 @@
 pipeline {
-    agent none
+    agent {
+        label 'unity-agent-wip'
+    }
     stages {
         stage('Android') {
-            agent {
-                label 'unity-android'
-            }
             environment {
                 UNITY_LICENSE_FILE = credentials('UnityLicenseFile.ulf')
                 UNITY_VERSION = '2020.3.12f1'
