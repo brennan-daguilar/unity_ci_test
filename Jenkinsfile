@@ -1,5 +1,5 @@
 pipeline {
-    aagent {
+    agent {
         label 'unity-agent-wip'
     }
     
